@@ -1,0 +1,24 @@
+body{
+    align-items:center;
+    background-color: blue;
+}
+h3{
+    align-items: center;
+    text-align: center;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 50px;
+
+}
+.col-auto{
+    align-items: center;
+    background-color: aqua;
+    margin: 50px;
+    justify-content: center;
+    padding: 5px;
+    padding-left: 0%;
+}
+input{
+    width: 500px;
+    height: 40px;
+    
+}

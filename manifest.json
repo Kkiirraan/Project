@@ -1,0 +1,38 @@
+{
+    "manifest_version": 3,
+    "name": "Malicious domain detector",
+    "version": "1.0.0",
+    "description": "My Extension for the Malicious Domain",
+    "permissions": [
+      "activeTab",
+      "storage",
+      "webNavigation" 
+    ],
+    "author": "kiranvinayanv@gmail.com",
+    "icons": {
+      "16": "images/Infect-icon.png",
+      "48": "images/Infect-icon.png",
+      "128": "images/Infect-icon.png"
+    },
+    "action": {
+      "default_icon": {
+        "16": "images/Infect-icon.png",
+        "48": "images/Infect-icon.png",
+        "128": "images/Infect-icon.png"
+      },
+      "default_title": "Click me",
+      "default_popup": "popup.html"
+    },
+    "options_page": "options.html",
+    "background": {
+      "service_worker": "background.js"
+    },
+    "content_scripts": [
+      {
+        "matches": ["<all_urls>"],
+        "js": ["contentScript.js"],
+        "run_at": "document_idle"
+      }
+    ]
+  }
+  

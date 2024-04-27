@@ -1,24 +1,95 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>Pop up page</title>
-<link rel="stylesheet" href="popup.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pop up page</title>
+  <link rel="stylesheet" href="popup.css">
 </head>
 <body>
-    <h3>Malicious URL Detector</h3>
-    <script src="popup.js"></script>
-    <form class="row g-3">
-       
-        <div class="col-auto">
-          <label for="inputPassword2" class="visually-hidden"></label>
-          <input type="text" class="form-control" id="text" placeholder="Enter a URL here">
-        </div>
-        <div class="col-auto">
-          <button type="submit" class="btn btn-primary mb-3">Check</button>
-        </div>
-      </form>
+  <img src="images/Infect-icon.png" alt="Malicious Me" id="image">
+  <!-- <img src="images/dangerous.jpeg" alt="dangerous" id="img-dangerous"> -->
+  <div class="container">
+    <svg viewBox="0 0 960 300">
+      <symbol id="s-text">
+        <text text-anchor="middle" x="50%" y="80%">Malicious Domain Detector</text>
+      </symbol>
+  
+      <g class = "g-ants">
+        <use xlink:href="#s-text" class="text-copy"></use>
+        <use xlink:href="#s-text" class="text-copy"></use>
+        <use xlink:href="#s-text" class="text-copy"></use>
+        <use xlink:href="#s-text" class="text-copy"></use>
+        <use xlink:href="#s-text" class="text-copy"></use>
+      </g>
+    </svg>
+    <p id="welcome">
+      "Welcome to our website! "</p><p id="welcome-p">Here, we're dedicated to ensuring your online safety by providing a powerful URL checking tool. With cyber threats on the rise, it's more important than ever to verify the authenticity and safety of the websites you visit. Our platform empowers you to quickly and accurately assess URLs for potential risks such as phishing attempts or malware. Stay one step ahead of online threats and explore the world of secure browsing with us. Let's make the internet a safer place, one URL at a time.
+    </p>
+  </div>
+  <div id="all">
+  <div class="form-box" id="url-form">
+    <h2>Check URL</h2>
+    <form>
+      <div class="user-box">
+        <input type="text" name="" required="" id="text">
+        <label>Url</label>
+      </div>
+      <button type="submit" id="button">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        Submit
+      </button>
+    </form>
+  </div>
+  <div class="container2">
+  Here's a step-by-step user instruction:
+    <p id="welcome">
+      Step 1:Enter URL</p>
+      <ul>
+        <li>In the Check URL form enter the url you want to check.eg:"http://example.com"</li>
+      </ul>
+      <p id="welcome">
+        Step 2:Submit URL</p>
+        <ul>
+       <li> Once you've entered the URL, locate the 'Submit' button near the input field.</li>
+        
+        <li>Click on the 'Submit' button to initiate the URL checking process.</li>
+</ul>
+<p id="welcome">
+  Step 3:Wait for Report</p>
+  <ul>
+    <li>After clicking the 'Submit' button, our system will analyze the entered URL for potential threats.</li>
+     
+     <li>Please wait patiently while the analysis is conducted. This may take a few moments.
+    </li>
+</ul>
+<p id="welcome">
+  Imprtance of Domain detectors</p>
+  <p>
+    Detecting domains is crucial for several reasons. First and foremost, it helps safeguard users from various online threats such as phishing attacks, malware distribution, and fraudulent activities. By identifying suspicious or malicious domains, users can be alerted to potential risks before interacting with them, thereby minimizing the chances of falling victim to cybercrimes. Additionally, domain detection plays a pivotal role in maintaining the integrity of online platforms and services. Website owners and administrators can use domain detection tools to monitor their domains for unauthorized activities, unauthorized use, or brand infringement, allowing them to take timely action to protect their reputation and assets. Overall, domain detection serves as a proactive measure to enhance online security, protect users' privacy and data, and preserve the trustworthiness of digital environments.
+    </p>
+    <p>Moreover, the increasing sophistication of cyber threats underscores the need for robust domain detection mechanisms. With cybercriminals employing advanced techniques to disguise malicious activities and deceive unsuspecting users, traditional security measures may prove inadequate. Domain detection solutions leverage cutting-edge technologies such as machine learning, artificial intelligence, and data analytics to analyze vast amounts of domain-related data and identify patterns indicative of malicious intent. By continuously evolving and adapting to emerging threats, these tools enable organizations and individuals to stay ahead of cyber threats and maintain a secure online environment. In essence, domain detection is an indispensable component of modern cybersecurity strategies, empowering stakeholders to proactively mitigate risks and defend against evolving cyber threats.
+    </p>
+    <p id="welcome">
+      What our detector can do?</p>
+      <p>
+        <ul>
+          <li>Our detector can identify URLs that are associated with malicious activities, helping users steer clear of potentially harmful websites.</li>
+        <li>It can also detect phishing attempts, alerting users to websites designed to deceive them into revealing sensitive information such as passwords or financial details.</li>
+      <li>Alongside identifying malicious and phishing URLs, your detector can recognize benign websites, ensuring users can confidently visit safe and legitimate web pages.</li> 
+    <li>Our detector goes beyond simple detection by generating detailed reports about the URLs it analyzes. These reports provide users with valuable insights into the nature of the website, including any potential risks or threats associated with it.  
+</li>
+    </ul>
+  </p>
+  </div>
+</div>
 </body>
+<script src="jquery-3.7.1.min.js"></script>
+
+<script src="popup.js" defer></script>
+
+
 </html>

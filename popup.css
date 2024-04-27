@@ -1,24 +1,283 @@
+@import url(https://fonts.googleapis.com/css?family=Montserrat);
+
 body{
     align-items:center;
-    background-color: blue;
+    font-family: Arial;
+    background: linear-gradient(#141e30, #243b55);
+        width: 700px;
+        /* background-image: url('cyber-7125316_1280.jpg'); */
+        height: 2000px;
+        z-index: 1;
+
+         /* Set the height of the popup */
+    
+}
+.container {
+    /* display: flex; */
+  /*   border:1px solid red; */
+    /* height: 100%; */
+    align-items: center;
+    position: relative;
+    top: -100px;
+    left: 30px;
+    /* transform: translate3d(-100px,-100px,0px); */
+
+
+  }
+  .container2 {
+    /* display: flex; */
+  /*   border:1px solid red; */
+    /* height: 100%; */
+    align-items: center;
+    position: relative;
+    top: 300px;
+    left: 30px;
+    /* transform: translate3d(-100px,-100px,0px); */
+
+
+  }
+  svg {
+    display: block;
+    font: 4.5em 'Montserrat';
+    /* width: 960px;
+    height: 300px; */
+    margin: 0 auto;
+    margin-top: 0px;
+}
+.text-copy {
+    fill: none;
+    stroke: white;
+    stroke-dasharray: 6% 29%;
+    stroke-width: 3px;
+    stroke-dashoffset: 0%;
+    animation: stroke-offset 5.5s infinite linear;
+}
+
+.text-copy:nth-child(1){
+	stroke: #4D163D;
+	animation-delay: -1;
+}
+
+.text-copy:nth-child(2){
+	stroke:#03e9f4;
+	animation-delay: -2s;
+}
+
+.text-copy:nth-child(3){
+	stroke: rgba(8, 8, 8, 0.6);
+	animation-delay: -3s;
+}
+
+.text-copy:nth-child(4){
+	stroke: rgba(37, 31, 31, 0.6);
+	animation-delay: -4s;
+}
+
+.text-copy:nth-child(5){
+	stroke: rgba(0,0,0,.6);
+	animation-delay: -5s;
+}
+
+@keyframes stroke-offset{
+	100% {stroke-dashoffset: -35%;}
 }
 h3{
     align-items: center;
     text-align: center;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    font-size: 50px;
+    font-size: 23px;
+    color: aliceblue;
 
 }
-.col-auto{
-    align-items: center;
-    background-color: aqua;
-    margin: 50px;
-    justify-content: center;
-    padding: 5px;
-    padding-left: 0%;
+
+#image{
+    width: 50px;
+    position :absolute;
+    transform: translate3d(40px,40px,-60px);
+    /* border: 2px solid #000; /* Border width, style, and color */
+    /* border-radius: 10px; */ 
+    /* border-color:#03e9f4; */
+    box-shadow: 0 10px 20px rgba(234, 0, 0, 0.1);
+
 }
-input{
-    width: 500px;
-    height: 40px;
-    
-}
+.form-box {
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    width: 400px;
+    margin-top: 100px;
+    margin-bottom: 100px;
+    padding: 40px;
+    transform: translate(-50%, 10%);
+    background: rgba(0,0,0,.5);
+    box-sizing: border-box;
+    box-shadow: 0 15px 25px rgba(0,0,0,.6);
+    border-radius: 10px;
+    z-index: 1;
+  }
+  
+  .form-box h2 {
+    margin: 0 0 30px;
+    padding: 0;
+    color: #fff;
+    text-align: center;
+  }
+  
+  .form-box .user-box {
+    position: relative;
+  }
+  
+  .form-box .user-box input {
+    width: 100%;
+    padding: 10px 0;
+    font-size: 16px;
+    color: #fff;
+    margin-bottom: 30px;
+    border: none;
+    border-bottom: 1px solid #fff;
+    outline: none;
+    background: transparent;
+  }
+  .form-box .user-box label {
+    position: absolute;
+    top:0;
+    left: 0;
+    padding: 10px 0;
+    font-size: 16px;
+    color: #fff;
+    pointer-events: none;
+    transition: .5s;
+  }
+  
+  .form-box .user-box input:focus ~ label,
+  .form-box .user-box input:valid ~ label {
+    top: -20px;
+    left: 0;
+    color: #03e9f4;
+    font-size: 12px;
+  }
+  
+  .form-box form button {
+    position: relative;
+    display: inline-block;
+    padding: 10px 20px;
+    background-color:rgba(0,0,0,.6);
+    color: #03e9f4;
+    font-size: 16px;
+    text-decoration: none;
+    text-transform: uppercase;
+    overflow: hidden;
+    transition: .5s;
+    margin-top: 40px;
+    letter-spacing: 4px
+  }
+  
+  .form-box button:hover {
+    background: #03e9f4;
+    color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 5px #03e9f4,
+                0 0 25px #03e9f4,
+                0 0 50px #03e9f4,
+                0 0 100px #03e9f4;
+  }
+  
+  .form-box button span {
+    position: absolute;
+    display: block;
+  }
+  
+  .form-box button span:nth-child(1) {
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, #03e9f4);
+    animation: btn-anim1 1s linear infinite;
+  }
+  
+  @keyframes btn-anim1 {
+    0% {
+      left: -100%;
+    }
+    50%,100% {
+      left: 100%;
+    }
+  }
+  
+  .form-box button span:nth-child(2) {
+    top: -100%;
+    right: 0;
+    width: 2px;
+    height: 100%;
+    background: linear-gradient(180deg, transparent, #03e9f4);
+    animation: btn-anim2 1s linear infinite;
+    animation-delay: .25s
+  }
+  
+  @keyframes btn-anim2 {
+    0% {
+      top: -100%;
+    }
+    50%,100% {
+      top: 100%;
+    }
+  }
+  
+  .form-box button span:nth-child(3) {
+    bottom: 0;
+    right: -100%;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(270deg, transparent, #03e9f4);
+    animation: btn-anim3 1s linear infinite;
+    animation-delay: .5s
+  }
+  
+  @keyframes btn-anim3 {
+    0% {
+      right: -100%;
+    }
+    50%,100% {
+      right: 100%;
+    }
+  }
+  
+  .form-box button span:nth-child(4) {
+    bottom: -100%;
+    left: 0;
+    width: 2px;
+    height: 100%;
+    background: linear-gradient(360deg, transparent, #03e9f4);
+    animation: btn-anim4 1s linear infinite;
+    animation-delay: .75s
+  }
+  
+  @keyframes btn-anim4 {
+    0% {
+      bottom: -100%;
+    }
+    50%,100% {
+      bottom: 100%;
+    }
+  }
+  #welcome {
+    color: white;
+    font-weight: bold;
+    font-style: italic;
+    width: 600px;
+    font-size: large;
+  }
+  p{
+    width: 600px;
+    font-size: 13px;
+  }
+  ul {
+    padding-left: 20px; /* Adjust the left padding to increase the gap between bullet points */
+  }
+  
+  ul li {
+    margin-bottom: 10px; /* Adjust the bottom margin to increase the gap between list items */
+    font-size: 13px;
+    width: 600px;
+  }

@@ -6,7 +6,10 @@
     "permissions": [
       "activeTab",
       "storage",
-      "webNavigation" 
+      "webNavigation",
+      "webRequest",
+      "declarativeNetRequest",
+      "scripting"
     ],
     "author": "kiranvinayanv@gmail.com",
     "icons": {
@@ -34,5 +37,6 @@
         "run_at": "document_idle"
       }
     ]
+    
   }
   

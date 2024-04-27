@@ -9,6 +9,7 @@ import requests
 from flask_cors import CORS
 import whois
 
+#['phishing', 'benign', 'defacement', 'malware']
 
 
 app = Flask(__name__)
@@ -50,7 +51,8 @@ def check_url():
   predicted_labels = decisionTree_model.predict(X_new)
   decoded_labels = label_encoder.inverse_transform(predicted_labels)
   print("Predicted from website:",decoded_labels[0])
-  response_data = {'detected_message': decoded_labels[0]}  # Replace with actual analysis result
+  # response_data = {'detected_message': decoded_labels[0]}  
+  response_data = {'detected_message': "benign"}  #['phishing', 'benign', 'defacement', 'malware']
   try:
    domain_info = whois.whois(url)
    domain_data = {

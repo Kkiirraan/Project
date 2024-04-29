@@ -346,7 +346,7 @@ h3{
   align-items: center;
   padding: 10px;
   font-size: 1.5em;
-  background-color: #2B3246;
+  background-color: #000e36;
   cursor:pointer;
   box-shadow:  9px 9px 18px #262c3e,
     -9px -9px 18px #30384e;
@@ -403,7 +403,7 @@ h3{
   cursor:pointer;
   box-shadow:  9px 9px 18px #262c3e,
     -9px -9px 18px #30384e;
-  color: rgb(247, 149, 72);
+  color: rgb(255, 111, 0);
   margin: 20px;
 }
 
@@ -429,7 +429,7 @@ h3{
   cursor:pointer;
   box-shadow:  9px 9px 18px #262c3e,
     -9px -9px 18px #30384e;
-  color: rgb(255, 10, 1);
+  color: #ff0800;
   margin: 20px;
 }
 

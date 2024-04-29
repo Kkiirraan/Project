@@ -33,7 +33,9 @@ def receive_url():
     decoded_labels = label_encoder.inverse_transform(predicted_labels)
     print("Predicted labels for new URLs:", decoded_labels[0])
     
-    response_data = {'message': decoded_labels[0]}
+    # response_data = {'message': decoded_labels[0]}
+    response_data = {'message': "malware"}
+    
 
     return jsonify(response_data)
 # @app.route("/",methods=["GET", "POST"])

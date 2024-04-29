@@ -9,7 +9,8 @@
       "webNavigation",
       "webRequest",
       "declarativeNetRequest",
-      "scripting"
+      "scripting",
+      "notifications"
     ],
     "author": "kiranvinayanv@gmail.com",
     "icons": {

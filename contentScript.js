@@ -25,13 +25,14 @@ function sendUrlForChecking(url) {
   })
   .then(data => {
     // Check response from the backend
+    if(data.block_url!=true) {
     if (data && data.message === "phishing" && url != warningDisplayed) {
       // Define the function to create the phishing warning message
       function createPhishingWarning() {
           // Create a custom alert message container
           var alertMessage = document.createElement('div');
           alertMessage.style.position = 'fixed';
-          alertMessage.style.height = '50px';
+          // alertMessage.style.height = '50px';
           alertMessage.style.top = '20px';
           alertMessage.style.left = '40%';
           alertMessage.style.padding = '50px';
@@ -149,10 +150,10 @@ function sendUrlForChecking(url) {
             // Create a custom alert message container
             var alertMessage = document.createElement('div');
             alertMessage.style.position = 'fixed';
-            alertMessage.style.height = '50px';
             alertMessage.style.top = '20px';
             alertMessage.style.left = '40%';
             alertMessage.style.padding = '50px';
+            // alertMessage.style.margin='20px';
             alertMessage.style.backgroundColor = '#000e36';
             alertMessage.style.border = '1px solid #000e36';
             alertMessage.style.zIndex = '9999';
@@ -178,6 +179,7 @@ function sendUrlForChecking(url) {
             proceedButton.style.padding = '10px 20px';
             proceedButton.style.marginRight = '10px';
             proceedButton.style.marginTop = '30px';
+            proceedButton.style.marginBottom = '30px';
             proceedButton.style.position = 'absolute';
             proceedButton.style.border = 'none';
             proceedButton.style.cursor = 'pointer';
@@ -198,6 +200,7 @@ function sendUrlForChecking(url) {
               exitButton.style.marginTop = '30px';
               exitButton.style.position = 'absolute';
               exitButton.style.marginLeft = '150px';
+              exitButton.style.marginBottom = '30px';
               exitButton.style.border = 'none';
               exitButton.style.cursor = 'pointer';
               exitButton.style.borderRadius='5px';
@@ -351,7 +354,7 @@ if (data && data.message === "defacement" && url != warningDisplayed) {
     // Create a custom alert message container
     var alertMessage = document.createElement('div');
     alertMessage.style.position = 'fixed';
-    alertMessage.style.height = '50px';
+    // alertMessage.style.height = '50px';
     alertMessage.style.top = '20px';
     alertMessage.style.left = '40%';
     alertMessage.style.padding = '50px';
@@ -467,6 +470,10 @@ if (data && data.message === "defacement" && url != warningDisplayed) {
 
       // Set warningDisplayed flag to true
       warningDisplayed = true;
+
+      }}
+      else{
+                  window.location.href = 'http://127.0.0.1:5000/warning-page';
 
       }
     

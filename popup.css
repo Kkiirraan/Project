@@ -311,7 +311,7 @@ h3{
 
 
  }
-/* #after-phishing{
+/* #for-phishingAlert{
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
   color: red;
 }
@@ -346,16 +346,7 @@ h3{
   align-items: center;
   padding: 10px;
   font-size: 1.5em;
-  background-color: #000e36;
-  cursor:pointer;
-  box-shadow:  9px 9px 18px #262c3e,
-    -9px -9px 18px #30384e;
-  color: #0ad406;
   margin: 20px;
-}
-.check:hover{
-  background-color: rgba(147, 209, 117, 0.50);
-  transition:0.5s;
 }
 
 .color {
@@ -371,25 +362,13 @@ h3{
   align-items: center;
   padding: 10px;
   font-size: 1.5em;
-
-  background-color: #2B3246;
   cursor:pointer;
-  box-shadow:  9px 9px 18px #262c3e,
-    -9px -9px 18px #30384e;
-  color: rgb(82, 125, 243);
   margin: 20px;
 }
 
 .spin {
   animation: spin 2s linear infinite;
 }
-
-.info:hover
-{
-  background-color: rgba(82, 125, 243, 0.50);
-  transition:0.5s;
-}
-
 .warning {
   border-radius: 5px;
   width: 220px;
@@ -399,19 +378,10 @@ h3{
   text-align: left;
   align-items: center;
   padding: 10px;
-  background-color: #2B3246;
   cursor:pointer;
-  box-shadow:  9px 9px 18px #262c3e,
-    -9px -9px 18px #30384e;
   color: rgb(255, 111, 0);
   margin: 20px;
 }
-
-.warning:hover{
-  background-color: rgba(247, 149, 73, 0.50);
-  transition:0.5s;
-}
-
 
 .rotate {
   animation: rotate 2s linear infinite;
@@ -425,19 +395,10 @@ h3{
   text-align: left;
   align-items: center;
   padding: 10px;
-  background-color: #2B3246;
   cursor:pointer;
-  box-shadow:  9px 9px 18px #262c3e,
-    -9px -9px 18px #30384e;
-  color: #ff0800;
   margin: 20px;
 }
 
-.danger:hover
-{
-  background-color: rgba(255, 10, 1, 0.33);
-  transition:0.5s;
-}
 
 
 .shine {
@@ -487,5 +448,454 @@ h3{
       0 0 40px red,
       0 0 60px red,
       0 0 80px red;
+  }
+}
+
+
+
+#for-phishingAlert {
+  position: absolute;
+  display: inline-block;
+  padding: 10px 10px;
+  background-color:rgba(0,0,0,.6);
+  color: #ff0800;
+  font-size: 16px;
+  text-decoration: none;
+  text-transform: uppercase;
+  overflow: hidden;
+  transition: .5s;
+  margin-top: 10px;
+  margin-left: 5px;
+  letter-spacing: 4px
+}
+
+#for-phishingAlert:hover {
+  background: #ff0800;
+  color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 0 5px #ff0800,
+              0 0 25px #ff0800,
+              0 0 50px #ff0800,
+              0 0 100px #ff0800;
+}
+
+#for-phishingAlert span {
+  position: absolute;
+  display: block;
+}
+
+#for-phishingAlert span:nth-child(1) {
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #ff0800);
+  animation: btn-anim1 1s linear infinite;
+}
+
+@keyframes btn-anim1 {
+  0% {
+    left: -100%;
+  }
+  50%,100% {
+    left: 100%;
+  }
+}
+
+#for-phishingAlert span:nth-child(2) {
+  top: -100%;
+  right: 0;
+  width: 2px;
+  height: 100%;
+  background: linear-gradient(180deg, transparent, #ff0800);
+  animation: btn-anim2 1s linear infinite;
+  animation-delay: .25s
+}
+
+@keyframes btn-anim2 {
+  0% {
+    top: -100%;
+  }
+  50%,100% {
+    top: 100%;
+  }
+}
+
+#for-phishingAlert span:nth-child(3) {
+  bottom: 0;
+  right: -100%;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(270deg, transparent, #ff0800);
+  animation: btn-anim3 1s linear infinite;
+  animation-delay: .5s
+}
+
+@keyframes btn-anim3 {
+  0% {
+    right: -100%;
+  }
+  50%,100% {
+    right: 100%;
+  }
+}
+
+#for-phishingAlert span:nth-child(4) {
+  bottom: -100%;
+  left: 0;
+  width: 2px;
+  height: 100%;
+  background: linear-gradient(360deg, transparent, #ff0800);
+  animation: btn-anim4 1s linear infinite;
+  animation-delay: .75s
+}
+
+@keyframes btn-anim4 {
+  0% {
+    bottom: -100%;
+  }
+  50%,100% {
+    bottom: 100%;
+  }
+}
+
+
+.buttonBlock {
+  background-color: #243b55;
+  border: none; /* No border */
+  color: white; /* White text color */
+  padding: 10px 32px; /* Padding */
+  text-align: center; /* Centered text */
+  text-decoration: none; /* No underline */
+  display: inline-block; /* Displayed as an inline element */
+  font-size: 16px; /* Font size */
+  margin: 4px 2px; /* Margin */
+  cursor: pointer; /* Cursor on hover */
+  border-radius: 10px; /* Rounded corners */
+  position: absolute;
+  left: 550px;
+  top: 35px;
+}
+
+
+
+
+#for-benignAlert{
+  position: absolute;
+  display: inline-block;
+  padding: 10px 10px;
+  background-color:rgba(0,0,0,.6);
+  color: #026d00;
+  font-size: 16px;
+  text-decoration: none;
+  text-transform: uppercase;
+  overflow: hidden;
+  transition: .5s;
+  margin-top: 10px;
+  margin-left: 5px;
+  letter-spacing: 4px
+}
+
+#for-benignAlert:hover {
+  background: #026d00;
+  color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 0 5px #026d00,
+              0 0 25px #026d00,
+              0 0 50px #026d00,
+              0 0 100px #026d00;
+}
+
+#for-benignAlert span {
+  position: absolute;
+  display: block;
+}
+
+#for-benignAlert span:nth-child(1) {
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #026d00,);
+  animation: btn-anim1 1s linear infinite;
+}
+
+@keyframes btn-anim1 {
+  0% {
+    left: -100%;
+  }
+  50%,100% {
+    left: 100%;
+  }
+}
+
+#for-benignAlert span:nth-child(2) {
+  top: -100%;
+  right: 0;
+  width: 2px;
+  height: 100%;
+  background: linear-gradient(180deg, transparent, #026d00,);
+  animation: btn-anim2 1s linear infinite;
+  animation-delay: .25s
+}
+
+@keyframes btn-anim2 {
+  0% {
+    top: -100%;
+  }
+  50%,100% {
+    top: 100%;
+  }
+}
+
+#for-benignAlert span:nth-child(3) {
+  bottom: 0;
+  right: -100%;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(270deg, transparent, #026d00,);
+  animation: btn-anim3 1s linear infinite;
+  animation-delay: .5s
+}
+
+@keyframes btn-anim3 {
+  0% {
+    right: -100%;
+  }
+  50%,100% {
+    right: 100%;
+  }
+}
+
+#for-benignAlert span:nth-child(4) {
+  bottom: -100%;
+  left: 0;
+  width: 2px;
+  height: 100%;
+  background: linear-gradient(360deg, transparent, #026d00,);
+  animation: btn-anim4 1s linear infinite;
+  animation-delay: .75s
+}
+
+@keyframes btn-anim4 {
+  0% {
+    bottom: -100%;
+  }
+  50%,100% {
+    bottom: 100%;
+  }
+}
+
+
+#for-defacementAlert{
+  position: absolute;
+  display: inline-block;
+  padding: 10px 10px;
+  background-color:rgba(0,0,0,.6);
+  color: rgb(255, 111, 0);
+  font-size: 16px;
+  text-decoration: none;
+  text-transform: uppercase;
+  overflow: hidden;
+  transition: .5s;
+  margin-top: 10px;
+  margin-left: 5px;
+  letter-spacing: 4px
+}
+
+#for-defacementAlert:hover {
+  background: rgb(255, 111, 0);
+  color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 0 5px rgb(255, 111, 0),
+              0 0 25px rgb(255, 111, 0),
+              0 0 50px rgb(255, 111, 0),
+              0 0 100px rgb(255, 111, 0);
+}
+
+#for-defacementAlert span {
+  position: absolute;
+  display: block;
+}
+
+#for-defacementAlert span:nth-child(1) {
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, rgb(255, 111, 0),);
+  animation: btn-anim1 1s linear infinite;
+}
+
+@keyframes btn-anim1 {
+  0% {
+    left: -100%;
+  }
+  50%,100% {
+    left: 100%;
+  }
+}
+
+#for-defacementAlert span:nth-child(2) {
+  top: -100%;
+  right: 0;
+  width: 2px;
+  height: 100%;
+  background: linear-gradient(180deg, transparent, rgb(255, 111, 0),);
+  animation: btn-anim2 1s linear infinite;
+  animation-delay: .25s
+}
+
+@keyframes btn-anim2 {
+  0% {
+    top: -100%;
+  }
+  50%,100% {
+    top: 100%;
+  }
+}
+
+#for-defacementAlert span:nth-child(3) {
+  bottom: 0;
+  right: -100%;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(270deg, transparent, rgb(255, 111, 0),);
+  animation: btn-anim3 1s linear infinite;
+  animation-delay: .5s
+}
+
+@keyframes btn-anim3 {
+  0% {
+    right: -100%;
+  }
+  50%,100% {
+    right: 100%;
+  }
+}
+
+#for-defacementAlert span:nth-child(4) {
+  bottom: -100%;
+  left: 0;
+  width: 2px;
+  height: 100%;
+  background: linear-gradient(360deg, transparent, rgb(255, 111, 0),);
+  animation: btn-anim4 1s linear infinite;
+  animation-delay: .75s
+}
+
+@keyframes btn-anim4 {
+  0% {
+    bottom: -100%;
+  }
+  50%,100% {
+    bottom: 100%;
+  }
+}
+
+
+#for-malwareAlert {
+  position: absolute;
+  display: inline-block;
+  padding: 10px 10px;
+  background-color:rgba(0,0,0,.6);
+  color: #ff0800;
+  font-size: 16px;
+  text-decoration: none;
+  text-transform: uppercase;
+  overflow: hidden;
+  transition: .5s;
+  margin-top: 10px;
+  margin-left: 5px;
+  letter-spacing: 4px
+}
+
+#for-malwareAlert:hover {
+  background: #ff0800;
+  color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 0 5px #ff0800,
+              0 0 25px #ff0800,
+              0 0 50px #ff0800,
+              0 0 100px #ff0800;
+}
+
+#for-malwareAlert span {
+  position: absolute;
+  display: block;
+}
+
+#for-malwareAlert span:nth-child(1) {
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #ff0800);
+  animation: btn-anim1 1s linear infinite;
+}
+
+@keyframes btn-anim1 {
+  0% {
+    left: -100%;
+  }
+  50%,100% {
+    left: 100%;
+  }
+}
+
+#for-malwareAlert span:nth-child(2) {
+  top: -100%;
+  right: 0;
+  width: 2px;
+  height: 100%;
+  background: linear-gradient(180deg, transparent, #ff0800);
+  animation: btn-anim2 1s linear infinite;
+  animation-delay: .25s
+}
+
+@keyframes btn-anim2 {
+  0% {
+    top: -100%;
+  }
+  50%,100% {
+    top: 100%;
+  }
+}
+
+#for-malwareAlert span:nth-child(3) {
+  bottom: 0;
+  right: -100%;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(270deg, transparent, #ff0800);
+  animation: btn-anim3 1s linear infinite;
+  animation-delay: .5s
+}
+
+@keyframes btn-anim3 {
+  0% {
+    right: -100%;
+  }
+  50%,100% {
+    right: 100%;
+  }
+}
+
+#for-malwareAlert span:nth-child(4) {
+  bottom: -100%;
+  left: 0;
+  width: 2px;
+  height: 100%;
+  background: linear-gradient(360deg, transparent, #ff0800);
+  animation: btn-anim4 1s linear infinite;
+  animation-delay: .75s
+}
+
+@keyframes btn-anim4 {
+  0% {
+    bottom: -100%;
+  }
+  50%,100% {
+    bottom: 100%;
   }
 }

@@ -1,5 +1,6 @@
 
 // Wait for the document to be fully loaded
+var url;
 document.addEventListener('DOMContentLoaded', function() {
   // Your jQuery-dependent code here
   $(document).ready(function() {
@@ -9,7 +10,7 @@ document.addEventListener('DOMContentLoaded', function() {
       event.preventDefault();
 
       // Retrieve URL input value
-      var url = $('#text').val();
+       url = $('#text').val();
 
       // Check if URL is empty
       if (!url) {
@@ -29,6 +30,8 @@ document.addEventListener('DOMContentLoaded', function() {
         success: function(response) {
           console.log(response);
           const detectedMessage = response.detected_message.detected_message;
+          const blockedTrue=response.blockedTrue;
+          alert(blockedTrue);
           const domainData = response.domain_data;
           // update the page with the detected message
           document.getElementById('all').style.display = 'none';
@@ -45,6 +48,10 @@ document.addEventListener('DOMContentLoaded', function() {
           document.getElementById('safety').innerText = "This URL has been identified as phishing. Proceed with caution.";
           document.getElementById('set-content').innerText = " This website has been flagged as potentially dangerous. Phishing websites often impersonate legitimate ones in order to steal sensitive information such as login credentials, credit card numbers, or personal details. Exercise caution and avoid entering any personal information on this site. It's recommended to close this page and refrain from interacting with it further to protect your online security.";
           document.getElementById('after-phishing').style.display = 'block';
+          if(blockedTrue===true){
+            $('#blockPhishing').text('UnBlock');
+ 
+          }
 
           }else if (detectedMessage === "benign"){
             document.getElementById('safety').innerText = "This URL is safe to use.";
@@ -57,12 +64,20 @@ document.addEventListener('DOMContentLoaded', function() {
             document.getElementById('set-content').innerText = "This website has been flagged as defacement, indicating that its content has been altered or vandalized in some way. Defacement can occur due to various reasons, including cyberattacks or unauthorized access by hackers. While defacement may not necessarily pose a direct threat to your personal data, it's advisable to approach such websites with caution. Exercise discretion and avoid interacting with any suspicious elements on this site";
 
             document.getElementById('after-defacement').style.display = 'block';
+            if(blockedTrue===true){
+              $('#blockDefacement').text('UnBlock');
+   
+            }
 
           }else{
             document.getElementById('safety').innerText = "This URL has been identified as malware. never proceed.";
             document.getElementById('set-content').innerText = "This website has been identified as hosting malware, which can pose serious risks to your device and personal data. Malware, short for malicious software, includes viruses, trojans, and other harmful programs designed to steal information, damage files, or gain unauthorized access to your system. Visiting or interacting with this website may result in malware being downloaded to your device without your knowledge. It's strongly advised to refrain from accessing this site and to run a thorough antivirus scan on your device to ensure your online safety ";
 
             document.getElementById('after-malware').style.display = 'block';
+            if(blockedTrue===true){
+              $('#blockMalware').text('UnBlock');
+   
+            }
 
           }
           document.getElementById('response-container').style.display = 'block';
@@ -96,3 +111,102 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   });
 });
+
+$(document).ready(function() {
+$('#blockMalware').click(function(e) {
+  e.preventDefault();
+const jsonData = JSON.stringify({ url: url });
+  alert(url);
+// Send AJAX request to the backend
+$.ajax({
+  type: 'POST',
+  url: 'http://127.0.0.1:5000/block_url', // Replace with your backend URL
+  contentType: 'application/json',
+  data: jsonData,
+  success: function(response) {
+    // Handle successful response from the backend
+    console.log(response);
+    alert(response.success);
+    if (response.success==='Sblock'){
+      $('#blockMalware').text('Block');
+    // Disable the button
+    }
+    if (response.success==='Ablock'){
+      $('#blockMalware').text('Block');
+    // Disable the button
+    }
+  },
+  error: function(xhr, status, error) {
+    // Handle error response from the backend
+    console.error('Error sending URL to the backend:', error);
+  }
+});
+});
+});
+
+
+$(document).ready(function() {
+  $('#blockDefacement').click(function(e) {
+    e.preventDefault();
+    var buttonText = $(this).text();
+    alert(buttonText);
+    const jsonData = JSON.stringify({ url: url ,buttonText: buttonText});
+  // Send AJAX request to the backend
+  $.ajax({
+    type: 'POST',
+    url: 'http://127.0.0.1:5000/block_url', // Replace with your backend URL
+    contentType: 'application/json',
+    data: jsonData,
+    success: function(response) {
+      // Handle successful response from the backend
+      console.log(response);
+      alert(response.success);
+      if (response.success==='Sblock'){
+        $('#blockDefacement').text('UnBlock');
+      // Disable the button
+      }
+      if (response.success==='Ablock'){
+        $('#blockDefacement').text('Block');
+      // Disable the button
+      }
+    },
+    error: function(xhr, status, error) {
+      // Handle error response from the backend
+      console.error('Error sending URL to the backend:', error);
+    }
+  });
+  });
+  });
+
+
+  $(document).ready(function() {
+    $('#blockPhishing').click(function(e) {
+      e.preventDefault();
+    const jsonData = JSON.stringify({ url: url });
+      alert(url);
+    // Send AJAX request to the backend
+    $.ajax({
+      type: 'POST',
+      url: 'http://127.0.0.1:5000/block_url', // Replace with your backend URL
+      contentType: 'application/json',
+      data: jsonData,
+      success: function(response) {
+        // Handle successful response from the backend
+        console.log(response);
+        alert(response.success);
+        if (response.success==='Sblock'){
+          $('#blockPhishing').text('UnBlock');
+        // Disable the button
+        }
+        if (response.success==='Ablock'){
+          $('#blockPhishing').text('Block');
+        // Disable the button
+        }
+      },
+      error: function(xhr, status, error) {
+        // Handle error response from the backend
+        console.error('Error sending URL to the backend:', error);
+      }
+    });
+    });
+    });

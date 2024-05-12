@@ -31,7 +31,7 @@ document.addEventListener('DOMContentLoaded', function() {
           console.log(response);
           const detectedMessage = response.detected_message.detected_message;
           const blockedTrue=response.blockedTrue;
-          alert(blockedTrue);
+          // alert(blockedTrue);
           const domainData = response.domain_data;
           // update the page with the detected message
           document.getElementById('all').style.display = 'none';
@@ -44,7 +44,7 @@ document.addEventListener('DOMContentLoaded', function() {
           //  });
           // "phishing', 'benign', 'defacement', 'malware"
           document.getElementById('detected-message').innerText = detectedMessage || "Unable to detect the url";
-          if (detectedMessage === "phishing"){
+          if (detectedMessage === 1){
           document.getElementById('safety').innerText = "This URL has been identified as phishing. Proceed with caution.";
           document.getElementById('set-content').innerText = " This website has been flagged as potentially dangerous. Phishing websites often impersonate legitimate ones in order to steal sensitive information such as login credentials, credit card numbers, or personal details. Exercise caution and avoid entering any personal information on this site. It's recommended to close this page and refrain from interacting with it further to protect your online security.";
           document.getElementById('after-phishing').style.display = 'block';
@@ -53,21 +53,11 @@ document.addEventListener('DOMContentLoaded', function() {
  
           }
 
-          }else if (detectedMessage === "benign"){
+          }else if (detectedMessage === 0){
             document.getElementById('safety').innerText = "This URL is safe to use.";
             document.getElementById('set-content').innerText = " This website has been determined to be benign, meaning it poses no immediate threat to your online security. Benign websites are considered safe to browse and interact with. However, it's always a good practice to exercise caution and verify the legitimacy of the content and links before sharing any personal information or downloading files. Enjoy exploring this website knowing that it has been deemed safe for browsing.";
 
             document.getElementById('after-benign').style.display = 'block';
-
-          }else if (detectedMessage === "defacement"){
-            document.getElementById('safety').innerText = "This URL has been identified as defacement. Carefull before processing.";
-            document.getElementById('set-content').innerText = "This website has been flagged as defacement, indicating that its content has been altered or vandalized in some way. Defacement can occur due to various reasons, including cyberattacks or unauthorized access by hackers. While defacement may not necessarily pose a direct threat to your personal data, it's advisable to approach such websites with caution. Exercise discretion and avoid interacting with any suspicious elements on this site";
-
-            document.getElementById('after-defacement').style.display = 'block';
-            if(blockedTrue===true){
-              $('#blockDefacement').text('UnBlock');
-   
-            }
 
           }else{
             document.getElementById('safety').innerText = "This URL has been identified as malware. never proceed.";
@@ -101,7 +91,7 @@ document.addEventListener('DOMContentLoaded', function() {
           document.getElementById('register').innerText = response.domain_data.registrar || "Not available";
           document.getElementById('org_name').innerText = response.domain_data.org || "Not available";
           document.getElementById('country').innerText = response.domain_data.country || "Not available";
-          alert(response.detected_message.detected_message);
+          // alert(response.detected_message.detected_message);
         }, 
         error: function(response) {
           // Handle error response from backend
@@ -116,7 +106,7 @@ $(document).ready(function() {
 $('#blockMalware').click(function(e) {
   e.preventDefault();
 const jsonData = JSON.stringify({ url: url });
-  alert(url);
+  // alert(url);
 // Send AJAX request to the backend
 $.ajax({
   type: 'POST',
@@ -126,7 +116,7 @@ $.ajax({
   success: function(response) {
     // Handle successful response from the backend
     console.log(response);
-    alert(response.success);
+    // alert(response.success);
     if (response.success==='Sblock'){
       $('#blockMalware').text('Block');
     // Disable the button
@@ -149,7 +139,7 @@ $(document).ready(function() {
   $('#blockDefacement').click(function(e) {
     e.preventDefault();
     var buttonText = $(this).text();
-    alert(buttonText);
+    // alert(buttonText);
     const jsonData = JSON.stringify({ url: url ,buttonText: buttonText});
   // Send AJAX request to the backend
   $.ajax({
@@ -160,7 +150,7 @@ $(document).ready(function() {
     success: function(response) {
       // Handle successful response from the backend
       console.log(response);
-      alert(response.success);
+      // alert(response.success);
       if (response.success==='Sblock'){
         $('#blockDefacement').text('UnBlock');
       // Disable the button
@@ -183,7 +173,7 @@ $(document).ready(function() {
     $('#blockPhishing').click(function(e) {
       e.preventDefault();
     const jsonData = JSON.stringify({ url: url });
-      alert(url);
+      // alert(url);
     // Send AJAX request to the backend
     $.ajax({
       type: 'POST',
@@ -193,7 +183,7 @@ $(document).ready(function() {
       success: function(response) {
         // Handle successful response from the backend
         console.log(response);
-        alert(response.success);
+        // alert(response.success);
         if (response.success==='Sblock'){
           $('#blockPhishing').text('UnBlock');
         // Disable the button

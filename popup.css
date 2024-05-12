@@ -3,7 +3,7 @@
 body{
     align-items:center;
     font-family: Arial;
-    background: linear-gradient(#141e30, #243b55);
+    background: white;
         width: 700px;
         /* background-image: url('cyber-7125316_1280.jpg'); */
         height: 2000px;
@@ -86,7 +86,7 @@ h3{
     text-align: center;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     font-size: 23px;
-    color: aliceblue;
+    color: rgb(0, 114, 214);
 
 }
 
@@ -119,7 +119,7 @@ h3{
   .form-box h2 {
     margin: 0 0 30px;
     padding: 0;
-    color: #fff;
+    color: #00dcf0;
     text-align: center;
   }
   
@@ -262,7 +262,7 @@ h3{
     }
   }
   #welcome {
-    color: white;
+    color: rgb(0, 187, 221);
     font-weight: bold;
     font-style: italic;
     width: 600px;
@@ -300,6 +300,7 @@ h3{
   text-align: left;
   font-size: large;
   font-style: italic;
+  color: aqua;
 
  
  }
@@ -561,9 +562,9 @@ h3{
 
 
 .buttonBlock {
-  background-color: #243b55;
+  background-color: #f3f4f6;
   border: none; /* No border */
-  color: white; /* White text color */
+  color: rgb(7, 6, 6); /* White text color */
   padding: 10px 32px; /* Padding */
   text-align: center; /* Centered text */
   text-decoration: none; /* No underline */

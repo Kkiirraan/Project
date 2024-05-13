@@ -71,7 +71,7 @@ def receive_url():
     predictions = CNN_model1.predict(preprocessed_data)
     nearest_prediction=int(round(predictions[0][0]))
     print("predicted value:", nearest_prediction)
-    response_data = {'message': nearest_prediction}
+    response_data = {'message': nearest_prediction,"block_url":block_url}
 #     response_data = {'message': "phishing","block_url":block_url}
     
 

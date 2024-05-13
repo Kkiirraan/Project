@@ -43,11 +43,11 @@ document.addEventListener('DOMContentLoaded', function() {
           //      p.style.display = 'none';
           //  });
           // "phishing', 'benign', 'defacement', 'malware"
-          document.getElementById('detected-message').innerText = detectedMessage || "Unable to detect the url";
           if (detectedMessage === 1){
           document.getElementById('safety').innerText = "This URL has been identified as phishing. Proceed with caution.";
           document.getElementById('set-content').innerText = " This website has been flagged as potentially dangerous. Phishing websites often impersonate legitimate ones in order to steal sensitive information such as login credentials, credit card numbers, or personal details. Exercise caution and avoid entering any personal information on this site. It's recommended to close this page and refrain from interacting with it further to protect your online security.";
           document.getElementById('after-phishing').style.display = 'block';
+          document.getElementById('detected-message').innerText = "Phishing";
           if(blockedTrue===true){
             $('#blockPhishing').text('UnBlock');
  
@@ -56,6 +56,7 @@ document.addEventListener('DOMContentLoaded', function() {
           }else if (detectedMessage === 0){
             document.getElementById('safety').innerText = "This URL is safe to use.";
             document.getElementById('set-content').innerText = " This website has been determined to be benign, meaning it poses no immediate threat to your online security. Benign websites are considered safe to browse and interact with. However, it's always a good practice to exercise caution and verify the legitimacy of the content and links before sharing any personal information or downloading files. Enjoy exploring this website knowing that it has been deemed safe for browsing.";
+            document.getElementById('detected-message').innerText = "Safe";
 
             document.getElementById('after-benign').style.display = 'block';
 
